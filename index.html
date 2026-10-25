@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alfa Vaper - Loja de Descartáveis e Pods</title>
+  <title>Alfa Vaper - Loja Oficial de Pods Descartáveis</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -26,7 +26,7 @@
     .top-bar {
       background: #050607;
       border-bottom: 1px solid var(--border);
-      padding: 6px 20px;
+      padding: 8px 20px;
       font-size: 12px;
       display: flex;
       justify-content: space-between;
@@ -167,33 +167,32 @@
       background: linear-gradient(rgba(10,12,14,0.7), rgba(10,12,14,0.9)), url('https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=1200&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
-      padding: 80px 40px;
+      padding: 70px 40px;
       border-bottom: 1px solid var(--border);
       text-align: center;
     }
     .hero h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 42px;
+      font-size: 38px;
       color: #fff;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       text-shadow: 0 0 20px rgba(0,0,0,0.8);
     }
-    .hero p { color: var(--text-muted); font-size: 18px; margin-bottom: 25px; }
-    .btn-primary {
+    .hero p { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; }
+    .btn-hero {
       background: var(--primary);
       color: #000;
-      padding: 12px 30px;
+      padding: 12px 28px;
       border: none;
       border-radius: 25px;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14px;
       cursor: pointer;
       text-transform: uppercase;
-      letter-spacing: 1px;
       box-shadow: 0 0 15px var(--primary-glow);
     }
 
-    /* MAIN CONTENT & CATALOG */
+    /* CONTAINER PRINCIPAL */
     .container {
       display: grid;
       grid-template-columns: 260px 1fr;
@@ -203,7 +202,7 @@
       margin: 0 auto;
     }
 
-    /* FILTROS */
+    /* FILTROS LATERAIS */
     .filters {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -283,9 +282,7 @@
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    .product-card:hover .product-img img {
-      transform: scale(1.08);
-    }
+    .product-card:hover .product-img img { transform: scale(1.08); }
 
     .product-info { padding: 18px; flex: 1; display: flex; flex-direction: column; }
     .product-brand { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
@@ -333,14 +330,14 @@
     .cart-drawer.open { right: 0; }
     .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
     .cart-items { flex: 1; overflow-y: auto; margin: 20px 0; }
-    .cart-item { display: flex; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; justify-content: space-between; align-items: center; }
+    .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
     .cart-footer { border-top: 1px solid var(--border); padding-top: 15px; }
 
     /* FOOTER */
     footer {
       background: #050607;
       border-top: 1px solid var(--border);
-      padding: 40px 30px;
+      padding: 30px;
       text-align: center;
       color: var(--text-muted);
       font-size: 13px;
@@ -348,7 +345,7 @@
 
     @media (max-width: 900px) {
       .container { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
+      .hero h1 { font-size: 24px; }
     }
   </style>
 </head>
@@ -363,7 +360,7 @@
   <!-- HEADER -->
   <header>
     <a href="#" class="brand">
-      <div class="brand-logo"><i class="fa-solid fa-wolf-pack-battalion"></i></div>
+      <div class="brand-logo"><i class="fa-solid fa-bolt"></i></div>
       <div class="brand-title">ALFA <span>VAPER</span></div>
     </a>
 
@@ -398,7 +395,7 @@
   <div class="hero">
     <h1>OS MELHORES PODS DESCARTÁVEIS</h1>
     <p>Garantia de procedência, entrega rápida e o melhor preço do mercado.</p>
-    <button class="btn-primary">VER LANÇAMENTOS</button>
+    <button class="btn-hero">VER LANÇAMENTOS</button>
   </div>
 
   <!-- MAIN CATALOG -->
@@ -409,9 +406,9 @@
       <div class="filter-group">
         <div class="filter-title">Marcas</div>
         <ul class="filter-list">
-          <li><label><input type="checkbox" onclick="filterCategory(this, 'IGNITE')"> Ignite</label></li>
-          <li><label><input type="checkbox" onclick="filterCategory(this, 'ELF BAR')"> Elf Bar</label></li>
-          <li><label><input type="checkbox" onclick="filterCategory(this, 'LOST MARY')"> Lost Mary</label></li>
+          <li><label><input type="checkbox"> Ignite</label></li>
+          <li><label><input type="checkbox"> Elf Bar</label></li>
+          <li><label><input type="checkbox"> Lost Mary</label></li>
         </ul>
       </div>
     </aside>
@@ -420,7 +417,7 @@
     <main class="products-grid" id="products-container">
 
       <!-- PRODUTO 1 -->
-      <div class="product-card" data-brand="IGNITE" data-name="Pod Descartável Ignite V50 - 5000 Puffs">
+      <div class="product-card" data-name="Pod Descartável Ignite V50 - 5000 Puffs">
         <div class="badge-sale">-15% OFF</div>
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=600&auto=format&fit=crop" alt="Ignite V50">
@@ -433,14 +430,14 @@
             <div class="current-price">R$ 110,00</div>
             <div class="pix-price">R$ 104,50 no PIX</div>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Ignite V50', 110)">
+          <button class="add-to-cart-btn" onclick="addToCart('Pod Descartável Ignite V50 - 5000 Puffs', 110)">
             <i class="fa-solid fa-plus"></i> Adicionar
           </button>
         </div>
       </div>
 
       <!-- PRODUTO 2 -->
-      <div class="product-card" data-brand="ELF BAR" data-name="Pod Descartável Elf Bar BC5000 Puffs">
+      <div class="product-card" data-name="Pod Descartável Elf Bar BC5000 Puffs">
         <div class="badge-sale">-10% OFF</div>
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1527661591475-527312dd65f5?q=80&w=600&auto=format&fit=crop" alt="Elfbar BC5000">
@@ -453,14 +450,14 @@
             <div class="current-price">R$ 99,00</div>
             <div class="pix-price">R$ 94,05 no PIX</div>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Elf Bar BC5000', 99)">
+          <button class="add-to-cart-btn" onclick="addToCart('Pod Descartável Elf Bar BC5000 Puffs', 99)">
             <i class="fa-solid fa-plus"></i> Adicionar
           </button>
         </div>
       </div>
 
       <!-- PRODUTO 3 -->
-      <div class="product-card" data-brand="LOST MARY" data-name="Pod Descartável Lost Mary OS5000">
+      <div class="product-card" data-name="Pod Descartável Lost Mary OS5000">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?q=80&w=600&auto=format&fit=crop" alt="Lost Mary OS5000">
         </div>
@@ -471,14 +468,14 @@
             <div class="current-price">R$ 105,00</div>
             <div class="pix-price">R$ 99,75 no PIX</div>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Lost Mary OS5000', 105)">
+          <button class="add-to-cart-btn" onclick="addToCart('Pod Descartável Lost Mary OS5000', 105)">
             <i class="fa-solid fa-plus"></i> Adicionar
           </button>
         </div>
       </div>
 
       <!-- PRODUTO 4 -->
-      <div class="product-card" data-brand="IGNITE" data-name="Pod Descartável Ignite V80 - 8000 Puffs">
+      <div class="product-card" data-name="Pod Descartável Ignite V80 - 8000 Puffs">
         <div class="badge-sale">MAIS VENDIDO</div>
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600&auto=format&fit=crop" alt="Ignite V80">
@@ -491,7 +488,7 @@
             <div class="current-price">R$ 139,90</div>
             <div class="pix-price">R$ 132,90 no PIX</div>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Ignite V80', 139.90)">
+          <button class="add-to-cart-btn" onclick="addToCart('Pod Descartável Ignite V80 - 8000 Puffs', 139.90)">
             <i class="fa-solid fa-plus"></i> Adicionar
           </button>
         </div>
@@ -515,7 +512,7 @@
         <span>Total:</span>
         <span id="cart-total" style="color:var(--primary);">R$ 0,00</span>
       </div>
-      <button class="btn-primary" style="width:100%;" onclick="checkout WhatsApp()">FINALIZAR COMPRA</button>
+      <button class="btn-hero" style="width:100%;" onclick="checkoutWhatsApp()">FINALIZAR COMPRA</button>
     </div>
   </div>
 
