@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alfa Vaper - Loja de Descartáveis e Pods</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0a0c0e;
+      --bg-card: #12161a;
+      --bg-card-hover: #1a2026;
+      --primary: #00ff66;
+      --primary-glow: rgba(0, 255, 102, 0.25);
+      --text-main: #f0f4f8;
+      --text-muted: #8c9ba5;
+      --border: #222c35;
+      --accent-red: #ff3366;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; }
+
+    /* BARRA SUPERIOR */
+    .top-bar {
+      background: #050607;
+      border-bottom: 1px solid var(--border);
+      padding: 6px 20px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--bg-dark);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #111, var(--primary));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .brand-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .brand-title span { color: var(--primary); }
+
+    .search-box {
+      flex: 1;
+      max-width: 500px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 12px 45px 12px 18px;
+      border-radius: 25px;
+      color: #fff;
+      outline: none;
+      transition: 0.3s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+    .search-box button {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .nav-icons { display: flex; gap: 20px; align-items: center; }
+    .icon-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: 0.3s;
+    }
+    .icon-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .badge {
+      position: absolute;
+      top: -5px; right: -5px;
+      background: var(--primary);
+      color: #000;
+      font-weight: bold;
+      font-size: 11px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* NAV CATEGORIAS */
+    nav {
+      background: #0f1317;
+      border-bottom: 1px solid var(--border);
+      padding: 0 30px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      overflow-x: auto;
+    }
+    nav a {
+      display: block;
+      padding: 14px 0;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+    }
+    nav a:hover, nav a.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* HERO BANNER */
+    .hero {
+      background: linear-gradient(rgba(10,12,14,0.7), rgba(10,12,14,0.9)), url('https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=1200&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 40px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 42px;
+      color: #fff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    .hero p { color: var(--text-muted); font-size: 18px; margin-bottom: 25px; }
+    .btn-primary {
+      background: var(--primary);
+      color: #000;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    /* MAIN CONTENT & CATALOG */
+    .container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 30px;
+      padding: 40px 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* FILTROS */
+    .filters {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      height: fit-content;
+    }
+    .filter-group { margin-bottom: 25px; }
+    .filter-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .filter-list { list-style: none; }
+    .filter-list li { margin-bottom: 8px; }
+    .filter-list label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .filter-list input[type="checkbox"] { accent-color: var(--primary); }
+
+    /* CATALOGO DE PRODUÇÃO */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: 0.3s;
+    }
+    .product-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px var(--primary-glow);
+    }
+
+    .badge-sale {
+      position: absolute;
+      top: 10px; left: 10px;
+      background: var(--accent-red);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 220px;
+      background: #181e24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-img img {
+      transform: scale(1.08);
+    }
+
+    .product-info { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+    .product-brand { font-size: 11px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+    .product-name { font-size: 15px; font-weight: 600; color: #fff; margin: 5px 0 10px; }
+
+    .price-box { margin-top: auto; }
+    .old-price { font-size: 12px; color: var(--text-muted); text-decoration: line-through; }
+    .current-price { font-size: 20px; font-weight: 700; color: #fff; }
+    .pix-price { font-size: 12px; color: var(--primary); font-weight: 600; }
+
+    .add-to-cart-btn {
+      width: 100%;
+      margin-top: 15px;
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+    .add-to-cart-btn:hover {
+      background: var(--primary);
+      color: #000;
+    }
+
+    /* CARRINHO LATERAL */
+    .cart-drawer {
+      position: fixed;
+      top: 0; right: -400px;
+      width: 380px; height: 100vh;
+      background: var(--bg-card);
+      border-left: 1px solid var(--border);
+      z-index: 1000;
+      transition: 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .cart-drawer.open { right: 0; }
+    .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+    .cart-items { flex: 1; overflow-y: auto; margin: 20px 0; }
+    .cart-item { display: flex; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .cart-item img { width: 50px; height: 50px; border-radius: 6px; object-fit: cover; }
+    .cart-footer { border-top: 1px solid var(--border); padding-top: 15px; }
+
+    /* FOOTER */
+    footer {
+      background: #050607;
+      border-top: 1px solid var(--border);
+      padding: 40px 30px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span>⚡ DESCONTO DE 5% NO PIX EM TODA A LOJA</span>
+    <span>ENTREGA EXPRESSA PARA TODO O BRASIL 📦</span>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-logo"><i class="fa-solid fa-wolf-pack-battalion"></i></div>
+      <div class="brand-title">ALFA <span>VAPER</span></div>
+    </a>
+
+    <div class="search-box">
+      <input type="text" placeholder="Buscar descartáveis, pods, marcas...">
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="nav-icons">
+      <div class="icon-btn"><i class="fa-regular fa-user"></i></div>
+      <div class="icon-btn" onclick="toggleCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="badge" id="cart-count">0</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="#" class="active">TODOS OS PRODUCTOS</a></li>
+      <li><a href="#">PODS DESCARTÁVEIS</a></li>
+      <li><a href="#">IGNITE</a></li>
+      <li><a href="#">ELFBAR</a></li>
+      <li><a href="#">LOST MARY</a></li>
+      <li><a href="#">JUICES / ESSÊNCIAS</a></li>
+      <li><a href="#">PROMOÇÕES 🔥</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <div class="hero">
+    <h1>OS MELHORES PODS DESCARTÁVEIS</h1>
+    <p>Garantia de procedência, entrega rápida e o melhor preço do mercado.</p>
+    <button class="btn-primary">VER LANÇAMENTOS</button>
+  </div>
+
+  <!-- MAIN CATALOG -->
+  <div class="container">
+    
+    <!-- FILTROS -->
+    <aside class="filters">
+      <div class="filter-group">
+        <div class="filter-title">Marcas</div>
+        <ul class="filter-list">
+          <li><label><input type="checkbox"> Ignite</label></li>
+          <li><label><input type="checkbox"> Elf Bar</label></li>
+          <li><label><input type="checkbox"> Lost Mary</label></li>
+          <li><label><input type="checkbox"> Oxbar</label></li>
+          <li><label><input type="checkbox"> Nikbar</label></li>
+        </ul>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">Quantidade de Puffs</div>
+        <ul class="filter-list">
+          <li><label><input type="checkbox"> Até 5.000 Puffs</label></li>
+          <li><label><input type="checkbox"> 8.000 Puffs</label></li>
+          <li><label><input type="checkbox"> 10.000+ Puffs</label></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- GRID DE PRODUTOS -->
+    <main class="products-grid">
+
+      <!-- PRODUTO 1 -->
+      <div class="product-card">
+        <div class="badge-sale">-15% OFF</div>
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=600&auto=format&fit=crop" alt="Ignite V50">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">IGNITE</div>
+          <div class="product-name">Pod Descartável Ignite V50 - 5000 Puffs</div>
+          <div class="price-box">
+            <div class="old-price">R$ 130,00</div>
+            <div class="current-price">R$ 110,00</div>
+            <div class="pix-price">R$ 104,50 no PIX</div>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Ignite V50', 110)">
+            <i class="fa-solid fa-plus"></i> Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUTO 2 -->
+      <div class="product-card">
+        <div class="badge-sale">-10% OFF</div>
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1527661591475-527312dd65f5?q=80&w=600&auto=format&fit=crop" alt="Elfbar BC5000">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">ELF BAR</div>
+          <div class="product-name">Pod Descartável Elf Bar BC5000 Puffs</div>
+          <div class="price-box">
+            <div class="old-price">R$ 120,00</div>
+            <div class="current-price">R$ 99,00</div>
+            <div class="pix-price">R$ 94,05 no PIX</div>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Elf Bar BC5000', 99)">
+            <i class="fa-solid fa-plus"></i> Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUTO 3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?q=80&w=600&auto=format&fit=crop" alt="Lost Mary OS5000">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">LOST MARY</div>
+          <div class="product-name">Pod Descartável Lost Mary OS5000</div>
+          <div class="price-box">
+            <div class="current-price">R$ 105,00</div>
+            <div class="pix-price">R$ 99,75 no PIX</div>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Lost Mary OS5000', 105)">
+            <i class="fa-solid fa-plus"></i> Adicionar
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUTO 4 -->
+      <div class="product-card">
+        <div class="badge-sale">MAIS VENDIDO</div>
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600&auto=format&fit=crop" alt="Ignite V80">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">IGNITE</div>
+          <div class="product-name">Pod Descartável Ignite V80 - 8000 Puffs</div>
+          <div class="price-box">
+            <div class="old-price">R$ 160,00</div>
+            <div class="current-price">R$ 139,90</div>
+            <div class="pix-price">R$ 132,90 no PIX</div>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Ignite V80', 139.90)">
+            <i class="fa-solid fa-plus"></i> Adicionar
+          </button>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- CARRINHO DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Seu Carrinho</h3>
+      <button onclick="toggleCart()" style="background:none; border:none; color:#fff; cursor:pointer;"><i class="fa-solid fa-xmark fa-xl"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items-list">
+      <p style="color: var(--text-muted);">Seu carrinho está vazio.</p>
+    </div>
+    <div class="cart-footer">
+      <div style="display:flex; justify-content:space-between; margin-bottom:15px; font-weight:bold;">
+        <span>Total:</span>
+        <span id="cart-total" style="color:var(--primary);">R$ 0,00</span>
+      </div>
+      <button class="btn-primary" style="width:100%;">FINALIZAR COMPRA</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 ALFA VAPER - Todos os direitos reservados.</p>
+    <p style="margin-top:8px;">Venda proibida para menores de 18 anos.</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function toggleCart() {
+      document.getElementById('cart-drawer').classList.toggle('open');
+    }
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+      toggleCart();
+    }
+
+    function updateCart() {
+      document.getElementById('cart-count').innerText = cart.length;
+      const list = document.getElementById('cart-items-list');
+      
+      if (cart.length === 0) {
+        list.innerHTML = '<p style="color: var(--text-muted);">Seu carrinho está vazio.</p>';
+        document.getElementById('cart-total').innerText = 'R$ 0,00';
+        return;
+      }
+
+      let html = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        html += `
+          <div class="cart-item">
+            <div style="flex:1;">
+              <div style="font-weight:600; font-size:14px;">${item.name}</div>
+              <div style="color:var(--primary); font-size:13px; font-weight:bold;">R$ ${item.price.toFixed(2)}</div>
+            </div>
+          </div>
+        `;
+      });
+
+      list.innerHTML = html;
+      document.getElementById('cart-total').innerText = `R$ ${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
