@@ -164,7 +164,7 @@
 
     /* HERO BANNER */
     .hero {
-      background: linear-gradient(rgba(10,12,14,0.7), rgba(10,12,14,0.9)), url('https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1200&auto=format&fit=crop');
+      background: linear-gradient(rgba(10,12,14,0.7), rgba(10,12,14,0.9)), url('https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=1200&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       padding: 70px 40px;
@@ -296,10 +296,10 @@
     .add-to-cart-btn {
       width: 100%;
       margin-top: 15px;
-      background: transparent;
+      background: #000;
       border: 1px solid var(--primary);
-      color: var(--primary);
-      padding: 10px;
+      color: #fff;
+      padding: 12px;
       border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
@@ -353,7 +353,7 @@
 
   <!-- TOP BAR -->
   <div class="top-bar">
-    <span>⚡ DESCONTO DE 5% NO PIX EM TODA A LOJA</span>
+    <span>⚡ DESCONTO DE 10% NO PIX EM TODA A LOJA</span>
     <span>ENTREGA EXPRESSA PARA TODO O BRASIL 📦</span>
   </div>
 
@@ -384,9 +384,8 @@
       <li><a href="#" class="active">TODOS OS PRODUTOS</a></li>
       <li><a href="#">PODS DESCARTÁVEIS</a></li>
       <li><a href="#">IGNITE</a></li>
+      <li><a href="#">DINNER LADY</a></li>
       <li><a href="#">ELFBAR</a></li>
-      <li><a href="#">LOST MARY</a></li>
-      <li><a href="#">JUICES / ESSÊNCIAS</a></li>
       <li><a href="#">PROMOÇÕES 🔥</a></li>
     </ul>
   </nav>
@@ -406,9 +405,10 @@
       <div class="filter-group">
         <div class="filter-title">Marcas</div>
         <ul class="filter-list">
+          <li><label><input type="checkbox"> Dinner Lady</label></li>
+          <li><label><input type="checkbox"> Sex Addict</label></li>
           <li><label><input type="checkbox"> Ignite</label></li>
           <li><label><input type="checkbox"> Elf Bar</label></li>
-          <li><label><input type="checkbox"> Lost Mary</label></li>
         </ul>
       </div>
     </aside>
@@ -416,80 +416,78 @@
     <!-- GRID DE PRODUTOS -->
     <main class="products-grid" id="products-container">
 
-      <!-- PRODUTO 1 -->
-      <div class="product-card" data-name="Pod Descartável Ignite V50 - 5000 Puffs">
-        <div class="badge-sale">-15% OFF</div>
+      <!-- PRODUTO 1: Dinner Lady LUMA 40K -->
+      <div class="product-card" data-name="Dinner Lady LUMA 40K - 40000 Puffs">
+        <div class="badge-sale">10% OFF/Pix</div>
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop" alt="Ignite V50">
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600&auto=format&fit=crop" alt="Dinner Lady LUMA 40K">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">DINNER LADY</div>
+          <div class="product-name">Dinner Lady LUMA 40K - 40.000 Puffs</div>
+          <div class="price-box">
+            <div class="current-price">R$ 115,11</div>
+            <div class="pix-price">10% OFF/Pix</div>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Dinner Lady LUMA 40K - 40.000 Puffs', 115.11)">
+            Comprar agora
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUTO 2: Sex Addict S200 Ultra Slim -->
+      <div class="product-card" data-name="Sex Addict S200 Ultra Slim Mes">
+        <div class="badge-sale">10% OFF/Pix</div>
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c6232669e02?q=80&w=600&auto=format&fit=crop" alt="Sex Addict S200">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">SEX ADDICT</div>
+          <div class="product-name">Sex Addict S200 Ultra Slim Mes...</div>
+          <div class="price-box">
+            <div class="current-price">R$ 84,51</div>
+            <div class="pix-price">10% OFF/Pix</div>
+          </div>
+          <button class="add-to-cart-btn" onclick="addToCart('Sex Addict S200 Ultra Slim', 84.51)">
+            Comprar agora
+          </button>
+        </div>
+      </div>
+
+      <!-- PRODUTO 3: IGNITE V400 MIX SLIM -->
+      <div class="product-card" data-name="IGNITE V400 MIX SLIM - 40000">
+        <div class="badge-sale">10% OFF/Pix</div>
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=600&auto=format&fit=crop" alt="IGNITE V400 MIX SLIM">
         </div>
         <div class="product-info">
           <div class="product-brand">IGNITE</div>
-          <div class="product-name">Pod Descartável Ignite V50 - 5000 Puffs</div>
+          <div class="product-name">IGNITE V400 MIX SLIM - 40.000 Puffs</div>
           <div class="price-box">
-            <div class="old-price">R$ 130,00</div>
-            <div class="current-price">R$ 110,00</div>
-            <div class="pix-price">R$ 104,50 no PIX</div>
+            <div class="current-price">R$ 130,41</div>
+            <div class="pix-price">10% OFF/Pix</div>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Pod Descartável Ignite V50 - 5000 Puffs', 110)">
-            <i class="fa-solid fa-plus"></i> Adicionar
+          <button class="add-to-cart-btn" onclick="addToCart('IGNITE V400 MIX SLIM - 40000 Puffs', 130.41)">
+            Comprar agora
           </button>
         </div>
       </div>
 
-      <!-- PRODUTO 2 -->
-      <div class="product-card" data-name="Pod Descartável Elf Bar BC5000 Puffs">
-        <div class="badge-sale">-10% OFF</div>
+      <!-- PRODUTO 4: ELFBAR Ice King Summer Edition -->
+      <div class="product-card" data-name="ELFBAR Ice King Summer Editi">
+        <div class="badge-sale">10% OFF/Pix</div>
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=600&auto=format&fit=crop" alt="Elfbar BC5000">
+          <img src="https://images.unsplash.com/photo-1527661591475-527312dd65f5?q=80&w=600&auto=format&fit=crop" alt="ELFBAR Ice King">
         </div>
         <div class="product-info">
-          <div class="product-brand">ELF BAR</div>
-          <div class="product-name">Pod Descartável Elf Bar BC5000 Puffs</div>
+          <div class="product-brand">ELFBAR</div>
+          <div class="product-name">ELFBAR Ice King Summer Edition...</div>
           <div class="price-box">
-            <div class="old-price">R$ 120,00</div>
-            <div class="current-price">R$ 99,00</div>
-            <div class="pix-price">R$ 94,05 no PIX</div>
+            <div class="current-price">R$ 125,91</div>
+            <div class="pix-price">10% OFF/Pix</div>
           </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Pod Descartável Elf Bar BC5000 Puffs', 99)">
-            <i class="fa-solid fa-plus"></i> Adicionar
-          </button>
-        </div>
-      </div>
-
-      <!-- PRODUTO 3 -->
-      <div class="product-card" data-name="Pod Descartável Lost Mary OS5000">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1517649763962-0c6232669e02?q=80&w=600&auto=format&fit=crop" alt="Lost Mary OS5000">
-        </div>
-        <div class="product-info">
-          <div class="product-brand">LOST MARY</div>
-          <div class="product-name">Pod Descartável Lost Mary OS5000</div>
-          <div class="price-box">
-            <div class="current-price">R$ 105,00</div>
-            <div class="pix-price">R$ 99,75 no PIX</div>
-          </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Pod Descartável Lost Mary OS5000', 105)">
-            <i class="fa-solid fa-plus"></i> Adicionar
-          </button>
-        </div>
-      </div>
-
-      <!-- PRODUTO 4 -->
-      <div class="product-card" data-name="Pod Descartável Ignite V80 - 8000 Puffs">
-        <div class="badge-sale">MAIS VENDIDO</div>
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=600&auto=format&fit=crop" alt="Ignite V80">
-        </div>
-        <div class="product-info">
-          <div class="product-brand">IGNITE</div>
-          <div class="product-name">Pod Descartável Ignite V80 - 8000 Puffs</div>
-          <div class="price-box">
-            <div class="old-price">R$ 160,00</div>
-            <div class="current-price">R$ 139,90</div>
-            <div class="pix-price">R$ 132,90 no PIX</div>
-          </div>
-          <button class="add-to-cart-btn" onclick="addToCart('Pod Descartável Ignite V80 - 8000 Puffs', 139.90)">
-            <i class="fa-solid fa-plus"></i> Adicionar
+          <button class="add-to-cart-btn" onclick="addToCart('ELFBAR Ice King Summer Edition', 125.91)">
+            Comprar agora
           </button>
         </div>
       </div>
